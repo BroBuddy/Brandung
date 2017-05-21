@@ -1,0 +1,13 @@
+{
+  "name": "Brandung",
+  "description": "Testaufgabe für Brandung",
+  "main": "index.html",
+  "authors": [
+    "Sebastian Stein"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/BroBuddy/Brandung",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
