@@ -1,0 +1,145 @@
+
+@import 'variables';
+
+/* GLOBAL */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    color: $grey;
+    font-family: Verdana, Arial;
+    font-size: 12px;
+}
+
+.container {
+    margin: 3px auto;
+    width: 460px;
+}
+
+/* TABS */
+
+.tabs {
+    background: $blue;
+    list-style: none;
+    padding: 10px 10px 0 10px;
+}
+.tabs__link {
+    background: $lightblue;
+    color: $white;
+    cursor: pointer;
+    display: inline-block;
+    padding: 7px;
+}
+.tabs__link.current {
+    background: $white;
+    color: $grey;
+    padding: 10px;
+}
+.tabs__link:not(.current):hover {
+    background: $lightgrey;
+    color: $grey;
+}
+
+/* CONTENT */
+
+.content {
+    color: $black;
+    display: none;
+}
+.content.current {
+    display: inherit;
+    border-bottom: 3px solid $averagegrey;
+    border-left: 3px solid $averagegrey;
+    border-right: 3px solid $averagegrey;
+}
+
+.content__item {
+    border-bottom: 1px solid $averagegrey;
+    display: block;
+    overflow: auto;
+    padding: 21px 16px;
+}
+.content__item:hover {
+    background: $lightgrey;
+}
+.content__item:hover .content__item--link {
+    color: $blue;
+}
+.content__item:hover .content__item__image {
+    border: 3px solid $lightgrey;
+}
+
+.content__item__image {
+    border: 3px solid $averagegrey;
+}
+
+.content__item__date {
+    font-size: 11px;
+}
+
+.content__item__headline {
+    color: $blue;
+    font-size: 15px;
+    padding: 5px 0;
+}
+
+.content__item__text {
+    padding: 5px 0;
+}
+
+.content__item--link {
+    color: $grey;
+    font-weight: bold;
+    text-decoration: none;
+}
+.content__item--link:hover {
+    color: $blue;
+}
+.content__item--link:before {
+    color: $blue;
+    content: ">";
+    font-size: 16px;
+    padding-right: 5px;
+}
+
+.content__item:last-child {
+    text-align: right;
+}
+
+/* BREAKPOINT 1 */
+
+@media (max-width: 459px) {
+    .container {
+        width: 98%;
+        padding: 0 3px;
+    }
+    .content__item {
+        display: grid;
+        overflow: auto;
+    }
+    .content__item__image {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .content__item__date {
+        clear: left;
+    }
+}
+
+/* BREAKPOINT 2 */
+
+@media (min-width: 460px) {
+    .container {
+        width: 460px;
+    }
+    .content__item {
+        display: block;
+        overflow: auto;
+    }
+    .content__item__image {
+        float: left;
+        margin-right: 20px;
+    }
+}
